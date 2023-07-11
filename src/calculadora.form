@@ -135,6 +135,8 @@
           <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-8280"/>
+          <foreground color="-16777216"/>
           <text value="="/>
         </properties>
       </component>
@@ -191,14 +193,20 @@
           <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394497"/>
+          <foreground color="-394497"/>
           <text value="0"/>
         </properties>
       </component>
       <component id="19d54" class="javax.swing.JLabel" binding="resultado">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394497"/>
+          <enabled value="false"/>
+          <font size="20"/>
+          <foreground color="-394497"/>
           <text value="0"/>
         </properties>
       </component>

@@ -139,7 +139,7 @@ public class calculadora extends JDialog {
             }
         });
 
-        //botones acciones
+        // OPERACIONES BASICAS
         suma.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -190,69 +190,52 @@ public class calculadora extends JDialog {
             }
         });
 
+        //OPERACIONES DE UN SOLO VALOR
         raiz.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                num1 = Double.parseDouble(resultado.getText());
-                operaciones.setText(" √ " + resultado.getText());
-                resultado.setText("");
-
-                operaciones.setText("√" + num1 + " = ");
+                double num1 = Double.parseDouble(resultado.getText());
                 double resultadoRaiz = Math.sqrt(num1);
+                operaciones.setText("√" + num1 + " = ");
                 resultado.setText(String.valueOf(resultadoRaiz));
-                num1 = resultadoRaiz;
             }
         });
+
 
         sen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                num1 = Double.parseDouble(resultado.getText());
-                operaciones.setText("sin(" + resultado.getText() + ")");
-                resultado.setText("");
-
-                // Operación seno
+                double num1 = Double.parseDouble(resultado.getText());
+                double resultadoSeno = Math.sin(Math.toRadians(num1));
                 operaciones.setText("sin(" + num1 + ") = ");
-                double radianes = Math.toRadians(num1);
-                double resultadoSeno = Math.sin(radianes);
                 resultado.setText(String.valueOf(resultadoSeno));
-                num1 = radianes;
             }
         });
+
 
         cos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num1 = Double.parseDouble(resultado.getText());
-                operaciones.setText("cos(" + resultado.getText() + ")");
-                resultado.setText("");
-
-                // Operación coseno
+                double resultadoCoseno = Math.cos(Math.toRadians(num1));
                 operaciones.setText("cos(" + num1 + ") = ");
-                double radianes = Math.toRadians(num1);
-                double resultadoCoseno = Math.cos(radianes);
                 resultado.setText(String.valueOf(resultadoCoseno));
-                num1 = radianes;
             }
         });
+
 
         tan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num1 = Double.parseDouble(resultado.getText());
-                operaciones.setText("tan(" + resultado.getText() + ")");
-                resultado.setText("");
-
-                // Operación tangente
+                double resultadoTangente = Math.tan(Math.toRadians(num1));
                 operaciones.setText("tan(" + num1 + ") = ");
-                double radianes = Math.toRadians(num1);
-                double resultadoTangente = Math.tan(radianes);
                 resultado.setText(String.valueOf(resultadoTangente));
-                num1 = radianes;
             }
         });
 
-        //operaciones basicas
+
+        //OPCION IGUAL LOGICA
         igual.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -290,13 +273,13 @@ public class calculadora extends JDialog {
                         return;
                 }
 
-                operaciones.setText(num1 + " " + operacionTexto + " " + num2 + " = ");
+                operaciones.setText(num1 + " " + operacionTexto + " " + num2);
                 resultado.setText(String.valueOf(resultadoOperacion));
                 num1 = resultadoOperacion;
             }
         });
 
-        //opcion borrar
+        // OPCION BORRAR
         borrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -305,22 +288,9 @@ public class calculadora extends JDialog {
                 num1 = num2 = 0;
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
-    //main
+    // MAIN
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculadora");
         frame.setContentPane(new calculadora().panel);
