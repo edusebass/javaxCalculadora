@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68c5d470-aa25-4e8c-b5ff-8d47a269a8db" name="Changes" comment="operaciones basicas completadas">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calculadora.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculadora.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculadora.java" afterDir="false" />
-    </list>
+    <list default="true" id="68c5d470-aa25-4e8c-b5ff-8d47a269a8db" name="Changes" comment="posicionamiento actualizado de archivo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +49,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\POO\IdeaProjects\javaxCalculadora" />
+      <recent name="C:\Users\POO\IdeaProjects\javaxCalculadora\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="calculadora" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="calculadora" />
@@ -98,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689045451126</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="CALCULADORA TERMINADA">
+      <created>1689088480979</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689088480979</updated>
+    </task>
+    <task id="LOCAL-00004" summary="posicionamiento actualizado de archivo">
+      <created>1689088555968</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689088555968</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +123,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creacion de calculadora" />
     <MESSAGE value="operaciones basicas completadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="operaciones basicas completadas" />
+    <MESSAGE value="CALCULADORA TERMINADA" />
+    <MESSAGE value="posicionamiento actualizado de archivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="posicionamiento actualizado de archivo" />
   </component>
 </project>
