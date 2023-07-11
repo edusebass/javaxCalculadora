@@ -38,106 +38,31 @@ public class calculadora extends JDialog {
 
     //
     public calculadora() {
-        //acciones botones
-        uno.addActionListener(new ActionListener() {
+        //CONTROL DE ERRORES COMO DIVISION PARA CERO
+        ActionListener agregarNumero = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "1");
-            }
-        });
+                JButton botonPresionado = (JButton) e.getSource();
+                String numeroPresionado = botonPresionado.getText();
 
-        dos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
                 if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
                     resultado.setText("");
                 }
-                resultado.setText(resultado.getText() + "2");
+                resultado.setText(resultado.getText() + numeroPresionado);
             }
-        });
+        };
 
-        tres.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "3");
-            }
-        });
+        uno.addActionListener(agregarNumero);
+        dos.addActionListener(agregarNumero);
+        tres.addActionListener(agregarNumero);
+        cuatro.addActionListener(agregarNumero);
+        cinco.addActionListener(agregarNumero);
+        seis.addActionListener(agregarNumero);
+        siete.addActionListener(agregarNumero);
+        ocho.addActionListener(agregarNumero);
+        nueve.addActionListener(agregarNumero);
+        cero.addActionListener(agregarNumero);
 
-        cuatro.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "4");
-            }
-        });
-
-        cinco.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "5");
-            }
-        });
-
-        seis.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "6");
-            }
-        });
-
-        siete.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "7");
-            }
-        });
-
-        ocho.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "8");
-            }
-        });
-
-        nueve.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "9");
-            }
-        });
-
-        cero.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
-                    resultado.setText("");
-                }
-                resultado.setText(resultado.getText() + "0");
-            }
-        });
 
         // OPERACIONES BASICAS
         suma.addActionListener(new ActionListener() {
