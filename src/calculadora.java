@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class calculadora extends JDialog {
+    private JPanel panel;
     private JButton siete;
     private JButton cuatro;
     private JButton uno;
@@ -20,115 +21,314 @@ public class calculadora extends JDialog {
     private JButton multiplicacion;
     private JButton resta;
     private JButton igual;
-    private JTextField entradaOperacion;
     private JButton potencia;
     private JButton raiz;
     private JButton sen;
     private JButton cos;
     private JButton tan;
-    private JPanel panel;
     private JButton borrar;
-    private double primerNumero;
-    private String operacion;
-    private boolean realizarOperacion;
+    private JLabel operaciones;
+    private JLabel resultado;
 
-    public calculadora(JFrame parent) {
-        super(parent);
-        setTitle("CALCULADORA");
-        setContentPane(panel);
-        setMinimumSize(new Dimension(450, 450));
-        setModal(true);
-        setLocationRelativeTo(parent);
 
-        realizarOperacion = false;
+    //variables para operaciones
+    double num1 = 0;
+    double num2 = 0;
+    String operacion;
 
-        ActionListener numButtonListener = new ActionListener() {
+    //
+    public calculadora() {
+        //acciones botones
+        uno.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JButton btn = (JButton) e.getSource();
-                String digit = btn.getText();
-                String currentText = entradaOperacion.getText();
-                entradaOperacion.setText(currentText + digit);
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "1");
             }
-        };
+        });
 
-        uno.addActionListener(numButtonListener);
-        dos.addActionListener(numButtonListener);
-        tres.addActionListener(numButtonListener);
-        cuatro.addActionListener(numButtonListener);
-        cinco.addActionListener(numButtonListener);
-        seis.addActionListener(numButtonListener);
-        siete.addActionListener(numButtonListener);
-        ocho.addActionListener(numButtonListener);
-        nueve.addActionListener(numButtonListener);
-        cero.addActionListener(numButtonListener);
-        punto.addActionListener(numButtonListener);
+        dos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "2");
+            }
+        });
 
+        tres.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "3");
+            }
+        });
+
+        cuatro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "4");
+            }
+        });
+
+        cinco.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "5");
+            }
+        });
+
+        seis.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "6");
+            }
+        });
+
+        siete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "7");
+            }
+        });
+
+        ocho.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "8");
+            }
+        });
+
+        nueve.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "9");
+            }
+        });
+
+        cero.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(resultado.getText().equals("0") || resultado.getText() == null || resultado.getText().equals("No se puede dividir entre cero")){
+                    resultado.setText("");
+                }
+                resultado.setText(resultado.getText() + "0");
+            }
+        });
+
+        //botones acciones
         suma.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                primerNumero = Double.parseDouble(entradaOperacion.getText());
-                operacion = "+";
-                entradaOperacion.setText("");
+                operacion = "suma";
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText(resultado.getText() + " + ");
+                resultado.setText("");
             }
         });
 
         resta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                primerNumero = Double.parseDouble(entradaOperacion.getText());
-                operacion = "-";
-                entradaOperacion.setText("");
+                operacion = "resta";
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText(resultado.getText() + " - ");
+                resultado.setText("");
             }
         });
 
         multiplicacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                primerNumero = Double.parseDouble(entradaOperacion.getText());
-                operacion = "*";
-                entradaOperacion.setText("");
+                operacion = "multiplicacion";
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText(resultado.getText() + " x ");
+                resultado.setText("");
             }
         });
 
         division.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                primerNumero = Double.parseDouble(entradaOperacion.getText());
-                operacion = "/";
-                entradaOperacion.setText("");
+                operacion = "division";
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText(resultado.getText() + " / ");
+                resultado.setText("");
             }
         });
 
+        potencia.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                operacion = "potencia";
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText(resultado.getText() + " ^ ");
+                resultado.setText("");
+            }
+        });
+
+        raiz.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText(" √ " + resultado.getText());
+                resultado.setText("");
+
+                operaciones.setText("√" + num1 + " = ");
+                double resultadoRaiz = Math.sqrt(num1);
+                resultado.setText(String.valueOf(resultadoRaiz));
+                num1 = resultadoRaiz;
+            }
+        });
+
+        sen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText("sin(" + resultado.getText() + ")");
+                resultado.setText("");
+
+                // Operación seno
+                operaciones.setText("sin(" + num1 + ") = ");
+                double radianes = Math.toRadians(num1);
+                double resultadoSeno = Math.sin(radianes);
+                resultado.setText(String.valueOf(resultadoSeno));
+                num1 = radianes;
+            }
+        });
+
+        cos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText("cos(" + resultado.getText() + ")");
+                resultado.setText("");
+
+                // Operación coseno
+                operaciones.setText("cos(" + num1 + ") = ");
+                double radianes = Math.toRadians(num1);
+                double resultadoCoseno = Math.cos(radianes);
+                resultado.setText(String.valueOf(resultadoCoseno));
+                num1 = radianes;
+            }
+        });
+
+        tan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num1 = Double.parseDouble(resultado.getText());
+                operaciones.setText("tan(" + resultado.getText() + ")");
+                resultado.setText("");
+
+                // Operación tangente
+                operaciones.setText("tan(" + num1 + ") = ");
+                double radianes = Math.toRadians(num1);
+                double resultadoTangente = Math.tan(radianes);
+                resultado.setText(String.valueOf(resultadoTangente));
+                num1 = radianes;
+            }
+        });
+
+        //operaciones basicas
         igual.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double segundoNumero = Double.parseDouble(entradaOperacion.getText());
-                double resultado = 0.0;
+                num2 = Double.parseDouble(resultado.getText());
+                double resultadoOperacion;
+                String operacionTexto;
 
                 switch (operacion) {
-                    case "+":
-                        resultado = primerNumero + segundoNumero;
+                    case "suma":
+                        resultadoOperacion = num1 + num2;
+                        operacionTexto = "+";
                         break;
-                    case "-":
-                        resultado = primerNumero - segundoNumero;
+                    case "resta":
+                        resultadoOperacion = num1 - num2;
+                        operacionTexto = "-";
                         break;
-                    case "*":
-                        resultado = primerNumero * segundoNumero;
+                    case "multiplicacion":
+                        resultadoOperacion = num1 * num2;
+                        operacionTexto = "x";
                         break;
-                    case "/":
-                        resultado = primerNumero / segundoNumero;
+                    case "division":
+                        if (num2 == 0.0) {
+                            resultado.setText("No se puede dividir entre cero");
+                            JOptionPane.showMessageDialog(null, "Ingrese otro número");
+                            throw new ArithmeticException("No se puede dividir entre cero");
+                        }
+                        resultadoOperacion = num1 / num2;
+                        operacionTexto = "/";
                         break;
+                    case "potencia":
+                        resultadoOperacion = Math.pow(num1, num2);
+                        operacionTexto = "^";
+                        break;
+                    default:
+                        return;
                 }
 
-                entradaOperacion.setText(Double.toString(resultado));
+                operaciones.setText(num1 + " " + operacionTexto + " " + num2 + " = ");
+                resultado.setText(String.valueOf(resultadoOperacion));
+                num1 = resultadoOperacion;
             }
         });
 
-        setVisible(true);
+        //opcion borrar
+        borrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resultado.setText("0");
+                operaciones.setText("0");
+                num1 = num2 = 0;
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
+    //main
     public static void main(String[] args) {
-        calculadora myCalcu = new calculadora(null);
+        JFrame frame = new JFrame("Calculadora");
+        frame.setContentPane(new calculadora().panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setResizable(false);
+        frame.setSize (435,630);
+        frame.setLocationRelativeTo(null);
     }
 }
