@@ -1,7 +1,7 @@
 # javaxCalculadora
 
-##Autor: Eduardo Almachi
-##EPN
+## Autor: Eduardo Almachi
+## EPN
 
-###Descripcion
+### Descripcion
 Calculadora trigonometrica con interfaz realizada por medio de Java y GUI form
